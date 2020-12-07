@@ -6,7 +6,7 @@ const config = {
         dbUrl: 'mongodb://localhost:27017/',
         cookie: 'cookie-for-auth-token',
         secret: 'SecretService',
-        saltRounds: 11
+        origin: ['http://localhost:5555', 'http://localhost:4200']
     }
 }
 

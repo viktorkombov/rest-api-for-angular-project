@@ -1,12 +1,25 @@
-const express = require('express');
-const {port} = require('./config');
+global.__basedir = __dirname;
+const dbConnector = require('./config/database');
+const apiRouter = require('./router');
+const cors = require('cors')
+const { errorHandler } = require('./utils');
 
-const app = express();
-const appString = `Server is listening on port: ${port}...`
+dbConnector()
+  .then(() => {
+    const config = require('./config');
 
-require('./config/database')().then(() => {
-    require('./config/express')(express, app);
-    require('./config/routes')(express, app);
+    const app = require('express')();
+    require('./config/express')(app);
 
-    app.listen(port, console.log(appString));
-}).catch((error) => console.log(error));
+    app.use(cors({
+      origin: config.origin,
+      credentials: true
+    }));
+
+    app.use('/api', apiRouter);
+
+    app.use(errorHandler);
+
+    app.listen(config.port, console.log(`Listening on port ${config.port}!`));
+  })
+  .catch(console.error);
