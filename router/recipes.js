@@ -6,10 +6,15 @@ const { recipeController } = require('../controllers');
 
 
 router.get('/', recipeController.getRecipes);
-router.post('/', recipeController.createRecipe);
+router.post('/', auth(), recipeController.createRecipe);
 
 router.get('/:recipeId', recipeController.getRecipe);
-router.put('/:recipeId', auth(), recipeController.subscribe);
 
+router.get('edit/:recipeId', auth(), recipeController.getEditRecipe);
+router.post('edit/:recipeId', auth(), recipeController.postEditRecipe)
+
+router.put('/:recipeId', auth(), recipeController.likeRecipe);
+
+router.get('/delete/:recipeId', auth(), recipeController.deleteRecipe)
 
 module.exports = router

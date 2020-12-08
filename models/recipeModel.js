@@ -17,7 +17,15 @@ const recipeSchema = new mongoose.Schema({
     ingredients: [
         String
     ],
+    category: {
+        type: String,
+        required: true
+    },
     difficultyLevel: {
+        type: String,
+        required: true
+    },
+    quantity: {
         type: String,
         required: true
     },
@@ -25,11 +33,15 @@ const recipeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    recipeContnet: {
+    recipeContent: {
         type: String,
         requried: true
     },
     createdAt: {
+        type: String,
+        required: true
+    },
+    creator: {
         type: String,
         required: true
     },
