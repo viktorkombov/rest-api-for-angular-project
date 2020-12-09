@@ -5,6 +5,5 @@ const likes = require('./likes');
 
 router.use('/users', users);
 router.use('/recipes', recipes);
-router.use('/likes', likes);
 
 module.exports = router;

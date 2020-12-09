@@ -30,17 +30,17 @@ function createRecipe(req, res, next) {
 
 
 function postEditRecipe(req, res, next) {
-    const recipeId = req.params.id;
-    Course.updateOne({ _id: recipeId }, { $set: { ...req.body } }).then((updatedRecipe) => {
+    const recipeId = req.params.recipeId;
+    recipeModel.updateOne({ _id: recipeId }, { $set: { ...req.body } }).then((updatedRecipe) => {
         res.status(200).send(updatedRecipe);
     }).catch(next)
 }
 
 function deleteRecipe(req, res, next) {
-    const recipeId = req.params.id;
-    Course.deleteOne({ _id: recipeId }).then(() => {
-        res.status(200);
-    })
+    const recipeId = req.params.recipeId;
+    recipeModel.deleteOne({ _id: recipeId }).then((deletedRecipe) => {
+        res.status(200).send(deletedRecipe);
+    }).catch(next)
 }
 
 function likeRecipe(req, res, next) {
@@ -59,7 +59,6 @@ module.exports = {
     createRecipe,
     getRecipe,
     likeRecipe,
-    getEditRecipe,
     postEditRecipe,
     deleteRecipe
 }

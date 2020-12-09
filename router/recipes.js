@@ -10,11 +10,11 @@ router.post('/', auth(), recipeController.createRecipe);
 
 router.get('/:recipeId', recipeController.getRecipe);
 
-router.get('/edit/:recipeId', auth(), recipeController.getEditRecipe);
 router.post('/edit/:recipeId', auth(), recipeController.postEditRecipe)
 
 router.put('/:recipeId', auth(), recipeController.likeRecipe);
 
-router.get('/delete/:recipeId', auth(), recipeController.deleteRecipe)
+router.post('/delete/:recipeId', auth(), recipeController.deleteRecipe)
+
 
 module.exports = router
