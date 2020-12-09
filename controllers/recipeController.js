@@ -28,12 +28,6 @@ function createRecipe(req, res, next) {
         .catch(next);
 }
 
-function getEditRecipe(req, res, next) {
-    const recipeId = req.params.id;
-    recipeModel.findOne({ _id: recipeId }).lean().then((recipe) => {
-        res.status(200).send(recipe);
-    }).catch(next)
-}
 
 function postEditRecipe(req, res, next) {
     const recipeId = req.params.id;
