@@ -10,7 +10,7 @@ const config = {
     },
     production: {
         port: process.env.PORT || 3000,
-        dbURL: process.env.DB_URL_CREDENTIALS,
+        dbUrl: process.env.DB_URL_CREDENTIALS,
         origin: [],
         cookie: 'cookie-for-auth-token',
         secret: 'SecretService'
