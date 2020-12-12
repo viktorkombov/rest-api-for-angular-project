@@ -1,5 +1,6 @@
 global.__basedir = __dirname;
 const dbConnector = require('./config/database');
+require('dotenv').config()
 const apiRouter = require('./router');
 const cors = require('cors')
 const { errorHandler } = require('./utils');
