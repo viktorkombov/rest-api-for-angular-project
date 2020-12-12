@@ -3,7 +3,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = {
     development: {
         port: process.env.PORT || 3000,
-        dbUrl: 'mongodb://localhost:27017/',
+        dbUrl: 'mongodb+srv://viktorkombov:Fo1k67cd45CqBahB@cluster0.3vnvm.mongodb.net/recipes?retryWrites=true&w=majority',
         cookie: 'cookie-for-auth-token',
         secret: 'SecretService',
         origin: ['http://localhost:5555', 'http://localhost:4200']

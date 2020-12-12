@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbString = require('./index').dbUrl + 'recipes';
+const dbString = require('./index').dbUrl;
 const rdyString = `${'*'.repeat(15)} Database is ready ${'*'.repeat(5)}`;
 
 module.exports = () => {
