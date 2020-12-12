@@ -10,7 +10,7 @@ const config = {
     },
     production: {
         port: process.env.PORT || 3000,
-        dbUrl: process.env.DB_URL_CREDENTIALS,
+        dbUrl: 'mongodb+srv://viktorkombov:Fo1k67cd45CqBahB@cluster0.3vnvm.mongodb.net/recipes?retryWrites=true&w=majority',
         origin: [],
         cookie: 'cookie-for-auth-token',
         secret: 'SecretService'
