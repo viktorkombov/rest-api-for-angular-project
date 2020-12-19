@@ -6,7 +6,7 @@ const config = {
         dbUrl: 'mongodb+srv://viktorkombov:Fo1k67cd45CqBahB@cluster0.3vnvm.mongodb.net/recipes?retryWrites=true&w=majority',
         cookie: 'cookie-for-auth-token',
         secret: 'SecretService',
-        origin: ['http://localhost:4200', 'http://localhost:4200/']
+        origin: ['*']
     },
     production: {
         port: process.env.PORT || 3000,
