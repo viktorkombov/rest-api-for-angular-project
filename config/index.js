@@ -6,7 +6,7 @@ const config = {
         dbUrl: 'mongodb+srv://viktorkombov:Fo1k67cd45CqBahB@cluster0.3vnvm.mongodb.net/recipes?retryWrites=true&w=majority',
         cookie: 'cookie-for-auth-token',
         secret: 'SecretService',
-        origin: ['https://your-recipes-spa.herokuapp.com', 'https://your-recipes-spa.herokuapp.com/']
+        origin: ['http://localhost:64153', 'http://localhost:64153/']
     },
     production: {
         port: process.env.PORT || 3000,
